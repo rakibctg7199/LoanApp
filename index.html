@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EasyLoanBD Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>EasyLoanBD</h1>
+    <button onclick="showForm('signup')">Sign Up</button>
+    <button onclick="showForm('signin')">Sign In</button>
+  </header>
+
+  <main id="dashboard">
+    <h2>আমার চাহিদা</h2>
+    <div id="loan-options">
+      <button onclick="selectLoan(5000)">লোন ১</button>
+      <button onclick="selectLoan(10000)">লোন ২</button>
+      <button onclick="selectLoan(15000)">লোন ৩</button>
+      <button onclick="selectLoan(20000)">লোন ৪</button>
+      <button onclick="selectLoan(25000)">লোন ৫</button>
+      <button onclick="selectLoan(30000)">লোন ৬</button>
+    </div>
+    <div>
+      <p>ধার নেয়া হচ্ছে: <span id="loanAmount">0</span> টাকা</p>
+    </div>
+    <div id="duration-buttons">
+      <button onclick="selectDuration(3)">৩ মাস</button>
+      <button onclick="selectDuration(6)">৬ মাস</button>
+      <button onclick="selectDuration(9)">৯ মাস</button>
+      <button onclick="selectDuration(12)">১২ মাস</button>
+    </div>
+    <p>মোট ফেরত দিতে হবে: <span id="totalRepay">0</span> টাকা</p>
+    <button onclick="applyLoan()">Apply</button>
+  </main>
+
+  <div id="forms" style="display:none;">
+    <div id="signupForm" style="display:none;">
+      <h2>রেজিস্টার করুন</h2>
+      <input type="text" id="signupUsername" placeholder="ইউজারনেম (ডিজিট সহ)">
+      <input type="text" id="signupPhone" placeholder="১১ ডিজিট মোবাইল নম্বর">
+      <input type="password" id="signupPassword" placeholder="৬ ডিজিট পাসওয়ার্ড">
+      <button onclick="registerUser()">Sign Up</button>
+    </div>
+    <div id="signinForm" style="display:none;">
+      <h2>লগইন করুন</h2>
+      <input type="text" id="signinPhone" placeholder="মোবাইল নম্বর">
+      <input type="password" id="signinPassword" placeholder="পাসওয়ার্ড">
+      <button onclick="loginUser()">Sign In</button>
+    </div>
+    <div id="depositForm" style="display:none;">
+      <h2>ডিপোজিট করুন</h2>
+      <p>01979448661 নম্বরে টাকা পাঠান</p>
+      <input type="text" id="trxID" placeholder="TRX ID দিন">
+      <button onclick="submitDeposit()">সাবমিট</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

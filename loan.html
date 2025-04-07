@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyLoanBD - Loan Apply</title>
+  <link rel="stylesheet" href="loan.css">
+</head>
+<body>
+  <header class="top-bar">
+    <img src="logo.png" alt="Logo" class="logo">
+    <div class="auth-buttons">
+      <button class="btn">Sign Up</button>
+      <button class="btn">Sign In</button>
+    </div>
+  </header>
+
+  <div class="warning">
+    🔔 ন দিচ্ছি (লোনের পরিমাণ মিনিমাম ৫০০০ টাকা)
+  </div>
+
+  <main class="loan-box">
+    <h2>EasyLoanBD</h2>
+
+    <div class="amount-section">
+      <p>ঋণের পরিমাণ: <span id="amount">৳5000</span></p>
+    </div>
+
+    <div class="loan-tabs">
+      <button class="loan-tab active">লোন ১</button>
+      <button class="loan-tab">লোন ২</button>
+      <button class="loan-tab">লোন ৩</button>
+      <button class="loan-tab">লোন ৪</button>
+      <button class="loan-tab">লোন ৫</button>
+      <button class="loan-tab">লোন ৬</button>
+    </div>
+
+    <input type="range" min="5000" max="50000" step="1000" value="5000" id="loanRange">
+
+    <h3>ঋণের মেয়াদ (মাস)</h3>
+    <div class="duration-buttons">
+      <button class="duration-btn">৩ মাস</button>
+      <button class="duration-btn">৬ মাস</button>
+      <button class="duration-btn">৯ মাস</button>
+      <button class="duration-btn">১২ মাস</button>
+    </div>
+
+    <button class="apply-btn">Apply</button>
+
+    <div class="deposit-form" style="display:none;">
+      <h3>Send Money করুন: <span id="bkash-number">01979448661</span> <button onclick="copyNumber()">📋 কপি</button></h3>
+      
+      <label for="method">পেমেন্ট পদ্ধতি:</label>
+      <select id="method">
+        <option value="bkash">bKash</option>
+        <option value="nagad">Nagad</option>
+        <option value="rocket">Rocket</option>
+      </select>
+
+      <label>Amount:</label>
+      <div class="amount-buttons">
+        <button>500</button>
+        <button>1000</button>
+        <button>1500</button>
+        <button>2000</button>
+        <button>2500</button>
+        <button>3000</button>
+      </div>
+
+      <label for="trxid">TRX ID:</label>
+      <input type="text" id="trxid" placeholder="টাকা পাঠানোর ট্রানজেকশন আইডি লিখুন">
+
+      <button class="submit-deposit">Confirm Deposit</button>
+    </div>
+  </main>
+
+  <script src="loan.js"></script>
+</body>
+</html>
